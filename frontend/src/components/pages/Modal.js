@@ -1,11 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import PublishSharpIcon from '@material-ui/icons/PublishSharp';
+import { Input } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        color: theme.palette.text.primary
     },
     textField: {
         marginLeft: theme.spacing(1),
@@ -58,18 +61,33 @@ export default function LayoutTextFields() {
                     variant="outlined"
                 />
                 <TextField
+                    id="outlined-full-width"
                     label="Quantity"
-                    id="outlined-margin-none"
                     style={{ margin: 8 }}
                     placeholder="Quantity"
+                    margin="normal"
+                    InputLabelProps={{
+                        shrink: true
+                    }}
                     variant="outlined"
                 />
                 <TextField
+                    id="outlined-full-width"
                     label="Type"
-                    id="outlined-margin-none"
                     style={{ margin: 8 }}
                     placeholder="Type"
+                    InputLabelProps={{
+                        shrink: true
+                    }}
                     variant="outlined"
+                />
+                <br />
+                <Input
+                    type="file"
+                    style={{ margin: 10 }}
+                    label="Upload file"
+                    large
+                    startAdornment={<PublishSharpIcon fontSize="large" />}
                 />
             </div>
         </div>
